@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="data:,">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +12,11 @@
 
     <audio id="musica-fondo" loop>
     <source src="musica.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
 </audio>
 
 <div id="control-musica" class="control-musica content-hidden">
     <button id="btn-musica" title="Pausar/Reproducir">🎵</button>
 </div>
-    <!-- Pantalla de bienvenida -->
     <div id="overlay-bienvenida" class="overlay">
         <div class="overlay-contenido">
             <h1>Nuestra Historia Juntos</h1>
@@ -32,7 +31,6 @@
         <div class="encabezado">
             <p class="nombre-izq">Anny Marin Londoño</p>
             <div class="foto-perfil-wrapper" id="slideshow-juntos" data-folder="juntos">
-                <!-- Las fotos de Juntos se cargan aquí -->
             </div>
             <p class="nombre-der">Juan Sebastian Cañas Cano</p>
         </div>
@@ -59,22 +57,18 @@
             <div class="album-columna">
                 <h3>Anny</h3>
                 <div class="fotos-wrapper" id="album-anny">
-                    <!-- Añade tus fotos de Anny aquí -->
                     <img src="" alt="Foto de Anny" class="foto-album">
                 </div>
             </div>
 
-            <!-- Historia en el medio -->
             <div class="texto-historia card-glass">
                 <h2>Nuestra Historia</h2>
                 <p>Constuyendose dia a dia...</p>
             </div>
 
-            <!-- Album de Cañas (Derecha) -->
             <div class="album-columna">
                 <h3>Cañas</h3>
                 <div class="fotos-wrapper" id="album-canas" data-folder="canas">
-                    <!-- Se llenará automáticamente -->
                 </div>
             </div>
         </div>
