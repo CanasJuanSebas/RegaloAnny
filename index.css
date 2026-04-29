@@ -8,10 +8,10 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrado horizontal global */
+    align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    width: 100vw; /* Asegura que ocupe todo el ancho */
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -50,7 +50,7 @@ img:hover {
 .encabezado {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centrado absoluto de los 3 elementos */
+    justify-content: center;
     width: 100%;
     gap: 50px;
     margin-top: 40px;
@@ -63,7 +63,7 @@ img:hover {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     white-space: nowrap;
-    flex: 1; /* Hace que los nombres ocupen el mismo espacio */
+    flex: 1;
 }
 
 .nombre-izq { text-align: right; }
@@ -150,7 +150,6 @@ img:hover {
     opacity: 0.8;
 }
 
-/* Eliminamos el ::after para que no haya duplicados de bordes */
 .foto-perfil-wrapper::after {
     display: none;
 }
@@ -180,7 +179,7 @@ img:hover {
 .album-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centrado vertical de los álbumes y la historia */
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 10px auto 0 auto;
@@ -189,8 +188,8 @@ img:hover {
 
 .album-columna {
     flex: 0 1 30%;
-    background: transparent; /* Sin fondo cuadrado */
-    border: none; /* Sin borde cuadrado */
+    background: transparent;
+    border: none;
     padding: 20px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -206,13 +205,11 @@ img:hover {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    /* Misma lógica que el central: borde único y sombra */
     border: 4px solid #9309f6;
     box-shadow: 0 0 20px rgba(147, 9, 246, 0.6);
-    animation: floating 4s ease-in-out infinite; /* Misma animación de flotación */
+    animation: floating 4s ease-in-out infinite;
 }
 
-/* Círculo punteado también para los laterales */
 .fotos-wrapper::before {
     content: '';
     position: absolute;
@@ -226,7 +223,6 @@ img:hover {
     z-index: -1;
 }
 
-/* Estilos para la lista de cosas que amo */
 .lista-amor {
     margin-top: 20px;
     text-align: left;
@@ -260,7 +256,6 @@ img:hover {
     color: #9309f6;
 }
 
-/* Confeti */
 .confetti {
     position: fixed;
     width: 10px;
@@ -270,8 +265,6 @@ img:hover {
     pointer-events: none;
 }
 
-
-/* Animación de entrada para los elementos */
 .album-columna, .texto-historia {
     animation: slideUp 1s ease-out forwards;
 }
@@ -300,7 +293,7 @@ img:hover {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 50%; /* Asegura el recorte circular con overflow visible en el padre */
+    border-radius: 50%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -317,7 +310,6 @@ img:hover {
     right: 10px;
 }
 
-/* Unificación de diseño de botones */
 .btn-sorpresa, .control-musica button {
     position: fixed;
     width: 50px;
@@ -373,16 +365,11 @@ left : 15px ;
 z-index : 1000 ;
 }
 
-
-
-
-/* Animación de entrada */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Pantalla de Bienvenida */
 .overlay {
     position: fixed;
     top: 0;
