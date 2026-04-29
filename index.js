@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnMusica = document.getElementById('btn-musica');
     const controlMusica = document.getElementById('control-musica');
 
-    // Lógica para el botón de entrada y reproducción de música
     if (btnEntrar) {
         btnEntrar.addEventListener('click', () => {
             overlay.style.opacity = '0';
@@ -15,11 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
             mainContent.classList.remove('content-hidden');
             mainContent.classList.add('content-visible');
             
-            // Revelar el control de música y reproducirla
             controlMusica.classList.remove('content-hidden');
             controlMusica.classList.add('content-visible');
             
-            // Ajustar volumen ambiente (30%)
             musica.volume = 0.3;
             musica.play().catch(error => console.log("La reproducción automática requiere interacción previa."));
 
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Botón para pausar/reproducir música
     if (btnMusica) {
         btnMusica.addEventListener('click', () => {
             if (musica.paused) {
@@ -44,14 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Lógica para el contador de tiempo detallado ---
     const fechaInicio = new Date('2025-08-19T14:30:00');
     
     function actualizarContador() {
         const hoy = new Date();
         const diferenciaTiempo = hoy.getTime() - fechaInicio.getTime();
         
-        if (diferenciaTiempo < 0) return; // Por si la fecha es futura
+        if (diferenciaTiempo < 0) return;
 
         const segundosTotales = Math.floor(diferenciaTiempo / 1000);
         const minutosTotales = Math.floor(segundosTotales / 60);
@@ -73,11 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (elSegundos) elSegundos.textContent = segundos;
     }
 
-    // Actualizar cada segundo
     actualizarContador();
     setInterval(actualizarContador, 1000);
 
-    // Lógica para el botón sorpresa y confeti
     const mensajes = [
         "¡Eres la mejor persona del mundo! ❤️",
         "Nuestra historia apenas comienza... ✨",
@@ -123,17 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- CONFIGURACIÓN DE TUS FOTOS ---
-    // Escribe aquí los nombres exactos de tus fotos que están en cada carpeta
     const fotosJuntos = [
         'foto1.jpeg', 'foto2.jpeg', 'foto3.jpeg', 'foto4.jpeg', 'foto5.jpeg', 'foto6.jpeg', 'foto0.png'
     ]; 
     const fotosAnny = [
-        'a.jpeg', 'a (1).jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg', 'a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg', 'a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg', 'a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg', 'a (17).jpeg', 'a (18).jpeg', 'a (19).jpeg', 'a (20).jpeg', 'a (21).jpeg', 'a (22).jpeg', 'a (23).jpeg', 'a (24).jpeg', 'a (25).jpeg', 'a (26).jpeg', 'a (27).jpeg', 'a (28).jpeg', 'a (29).jpeg', 'a (30).jpeg', 'a (31).jpeg', 'a (32).jpeg', 'a (33).jpeg', 'a (34).jpeg', 'a (35).jpeg', 'a (36).jpeg', 'a (37).jpeg', 'a (38).jpeg', 'a (39).jpeg', 'a (40).jpeg', 'a (41).jpeg', 'a (42).jpeg', 'a (43).jpeg', 'a (44).jpeg', 'a (45).jpeg', 'a (46).jpeg', 'a (47).jpeg', 'a (48).jpeg', 'a (49).jpeg', 'a (50).jpeg', 'a (51).jpeg', 'foto1.jpeg'
+        'a.jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg', 'a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg', 'a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg', 'a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg', 'a (17).jpeg', 'a (18).jpeg', 'a (19).jpeg', 'a (20).jpeg', 'a (21).jpeg', 'a (22).jpeg', 'a (23).jpeg', 'a (24).jpeg', 'a (25).jpeg', 'a (26).jpeg', 'a (27).jpeg', 'a (28).jpeg', 'a (29).jpeg', 'a (30).jpeg', 'a (31).jpeg', 'a (32).jpeg', 'a (33).jpeg', 'a (34).jpeg', 'a (35).jpeg', 'a (36).jpeg', 'a (37).jpeg', 'a (38).jpeg', 'a (39).jpeg', 'a (40).jpeg', 'a (41).jpeg', 'a (42).jpeg', 'a (43).jpeg', 'a (44).jpeg', 'a (45).jpeg', 'a (46).jpeg', 'a (47).jpeg', 'a (48).jpeg', 'a (49).jpeg', 'a (50).jpeg', 'a (51).jpeg', 'foto1.jpeg'
     ]; 
-    const fotosCanas = []; // Añade aquí los nombres de las fotos de Cañas (ej: 'foto1.jpeg')
+    const fotosCanas = [
+        'a (1).jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg', 'a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg', 'a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg', 'a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg', 'a (17).jpeg', 'a (18).jpeg'
+    ];
 
-    // --- Función para cargar las fotos de las listas ---
     function cargarFotosListado(wrapperId, listado, folder) {
         const wrapper = document.getElementById(wrapperId);
         if (!wrapper || !listado.length) return;
@@ -148,12 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cargar las fotos al inicio
     cargarFotosListado('slideshow-juntos', fotosJuntos, 'juntos');
     cargarFotosListado('album-anny', fotosAnny, 'anny');
     cargarFotosListado('album-canas', fotosCanas, 'canas');
 
-    // Lógica para el cambio automático (se mantiene igual)
     setInterval(() => {
         ['slideshow-juntos', 'album-anny', 'album-canas'].forEach(id => {
             const wrapper = document.getElementById(id);
@@ -170,10 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let fotosArray = Array.from(fotos);
             let index = fotosArray.indexOf(currentVisible);
             
-            // Quitar visibilidad a la foto actual
             currentVisible.classList.remove('visible');
             
-            // Calcular la siguiente foto (vuelve a 0 si llega al final)
             let nextIndex = (index + 1) % fotosArray.length;
             fotosArray[nextIndex].classList.add('visible');
         });
