@@ -429,3 +429,199 @@ z-index : 1000 ;
     transform: translateY(0);
 }
 
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    .overlay-contenido {
+        padding: 20px;
+        width: 85%;
+        max-width: 320px;
+    }
+
+    .overlay h1 {
+        font-size: 2.2rem;
+    }
+
+    .overlay-contenido img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .arriba {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .nombre-izq, .nombre-der {
+        text-align: center;
+        padding: 0;
+        font-size: 26px !important;
+        flex: none;
+        width: 100%;
+        white-space: normal;
+    }
+
+    .foto-perfil-wrapper {
+        width: 200px;
+        height: 200px;
+        order: -1; /* Coloca la foto arriba de los nombres */
+    }
+
+    .contador-tiempo {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tiempo-unidad {
+        min-width: 70px;
+        padding: 8px;
+        flex: 1 1 40%; /* Dos por fila en móviles pequeños */
+        max-width: 100px;
+    }
+
+    .tiempo-unidad span {
+        font-size: 1.6rem;
+    }
+
+    .album-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .album-columna, .texto-historia {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .fotos-wrapper {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .texto-historia {
+        order: 2; /* Historia después del primer álbum */
+    }
+
+    .album-columna:nth-child(1) { order: 1; }
+    .album-columna:nth-child(3) { order: 3; }
+
+    .texto-historia h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-sorpresa, .control-musica button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .overlay-contenido {
+        padding: 20px;
+        width: 85%;
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-contenido img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .nombre-izq, .nombre-der {
+        text-align: center;
+        padding: 0;
+        font-size: 24px !important;
+        flex: none;
+        width: 100%;
+        white-space: normal;
+    }
+
+    .foto-perfil-wrapper {
+        width: 200px;
+        height: 200px;
+        order: -1; /* Mueve la foto arriba de los nombres si se desea, o déjala en medio */
+    }
+    
+    /* Reordenar encabezado para móvil: Foto -> Nombres */
+    .encabezado {
+        display: flex;
+        flex-direction: column;
+    }
+    .foto-perfil-wrapper { order: 1; }
+    .nombre-izq { order: 2; }
+    .nombre-der { order: 3; }
+
+    .contador-tiempo {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .tiempo-unidad {
+        min-width: 65px;
+        padding: 8px;
+    }
+
+    .tiempo-unidad span {
+        font-size: 1.5rem;
+    }
+
+    .tiempo-unidad p {
+        font-size: 0.9rem;
+    }
+
+    .album-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .album-columna, .texto-historia {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .fotos-wrapper {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .texto-historia h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn-sorpresa, .control-musica button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
